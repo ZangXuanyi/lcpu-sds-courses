@@ -30,6 +30,10 @@
   \end{frame}
 }
 
+\AtBeginSubsection{
+    \frame{\subsectionpage}
+}
+
 \title{LCPU 先导课：计算机基础}
 \author{臧炫懿}
 \institute{北京大学 信息科学技术学院}
@@ -38,10 +42,6 @@
 \begin{document}
 
 \frame{\titlepage}
-
-\begin{frame}{课程安排}
-    \tableofcontents
-\end{frame}
 
 \section{计算机基础知识}
 
@@ -220,15 +220,14 @@
                 \item Ctrl+Z：撤销
                 \item Ctrl+Y：重做
                 \item Ctrl+A：全选
-                \item Alt+Tab：切换窗口
-                \item Ctrl+Alt+Del：打开任务管理器
+                \item Ctrl+Alt+Del：任务管理器
                 \item Alt+F4：关闭窗口
             \end{itemize}
 
         \column{0.48\textwidth}
             \begin{itemize}
                 \item Win+R：打开运行窗口
-                \item Win+E：打开文件资源管理器
+                \item Win+E：文件资源管理器
                 \item Win+D：显示桌面
                 \item Win+L：锁定计算机
                 \item Ctrl+S：保存
@@ -268,45 +267,219 @@
 
 \begin{frame}{网络安全}
     虽然互联网的出现给我们带来了便利，但也带来了很多风险。部分人心术不正，使
-    用互联网进行诈骗、盗窃、敲诈勒索等违法犯罪活动；而他们使用的主要手段是不定向
-    的网络攻击，例如钓鱼、木马、蠕虫和病毒等。
+    用互联网进行诈骗、盗窃、敲诈勒索等违法犯罪活动；而他们使用的主要手段是不定向的网络攻击，例如钓鱼、木马、蠕虫和病毒等。
 \end{frame}
 
 \begin{frame}{从根源解决问题}
     为了防止计算机被感染或者破坏，我们应该从源头解决问题。我们可以采取以下措施：
     \begin{itemize}
-        \item 不浏览不安全网页或下载不明软件；
-        \item 识别伪造的网站；
-        \item 保持操作系统和软件的更新；
-        \item 使用防火墙和杀毒软件；
-        \item 使用强密码和密钥等更加安全的措施；
-        \item 善用沙箱；
-        \item 定期备份数据并创建系统还原点。
+        \item <2->不浏览不安全网页或下载不明软件；
+        \item <3->识别伪造的网站；
+        \item <4->保持操作系统和软件的更新；
+        \item <5->使用防火墙和杀毒软件；
+        \item <6->使用强密码和密钥等更加安全的措施；
+        \item <7->善用沙箱；
+        \item <8->定期备份数据并创建系统还原点。
     \end{itemize}
 \end{frame}
 
 \begin{frame}{亡羊补牢的办法}
     如果不幸感染了病毒或者木马，我们可以采取以下措施：
     \begin{itemize}
-        \item 立刻断开网络连接；
-        \item 使用杀毒软件进行全面扫描；
-        \item 向有关部门报告；
-        \item 使用系统还原点恢复或重装操作系统。
+        \item <2->立刻断开网络连接；
+        \item <3->使用杀毒软件进行全面扫描；
+        \item <4->向有关部门报告；
+        \item <5->使用系统还原点恢复或重装操作系统。
     \end{itemize}
 \end{frame}
 
 \section{搜索和信息获取}
 
+\subsection{信息的鉴别}
+\begin{frame}
+    \frametitle{信息的鉴别}
+    在互联网时代，信息的获取变得非常容易，但是信息的质量却参差不齐。我们在了解如何获取信息前，应该学会鉴别信息的真实性和可靠性。
+
+    一般我们可以从以下几个方面来判断信息的真实性和可靠性：
+    \begin{itemize}
+        \item <2->来源：是否来自权威机构或专业人士？
+        \item <3->内容：是否有事实依据和数据支持？
+        \item <4->时间：是否是最新的？是否已经过时？
+        \item <5->可验证性：是否可以通过其他渠道验证？
+        \item <6->评价：其他人对该信息的评价如何？认可度高吗？
+    \end{itemize}
+\end{frame}
+
 \subsection{搜索及其技巧}
 
 \begin{frame}{选择搜索引擎}
-    国内最常用的搜索引擎是百度。但是我们在使用百度搜索的时候，往往会遇到一些问题，例如搜索结果不准确、广告太多等。其他国内搜索引擎也有类似的问题，因此并不好用。
-
-    由于现在新购整机都会预装Windows系统，因此基本上都自带Microsoft Edge，其搜索引擎是Bing。我们在界面顶端会发现“国内版”和“国际版”两个选项；在使用国内版搜索时，搜索结果和百度相比，广告显著减少；而在使用国际版搜索时效果更好。
-
-    我们从国内网络访问Bing，其网址是\href{https://cn.bing.com/}{cn.bing.com}，而真正的Bing是\href{https://www.bing.com/}{www.bing.com}。有条件访问该网址的同学可以尝试使用这个Bing。而Google作为全球最大的国际搜索引擎，搜索结果的准确性和全面性都非常好，但是我们也很难访问到它。
-
-    因此，不使用用特殊方式上网的情况下，如果我们要搜索的信息\textbf{非中文社区独有}，我们更推荐使用必应的国际版搜索引擎。
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+            国内最常用的搜索引擎是百度。但是我们在使用百度搜索的时候，往往会遇到一些问题，例如搜索结果不准确、广告太多等。其他国内搜索引擎也有类似的问题，因此并不好用。
+        \column{0.48\textwidth}
+            \includegraphics[width=0.9\textwidth]{4-1-Baidu.png}
+    \end{columns}
 \end{frame}
+
+\begin{frame}{选择搜索引擎}
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+            目前新购整机几乎都已经预装了Windows 11，Windows 11自带的搜索引擎是必应（Bing）。我们可以在Bing的界面顶端发现两个按钮，分别是“国内版”和“国际版”。其中，国内版的搜索结果也不尽如人意。
+        \column{0.48\textwidth}
+            \includegraphics[width=0.9\textwidth]{4-2-BingN.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{选择搜索引擎}
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+            而如果使用国际版的Bing搜索引擎，我们会发现它的搜索结果非常准确，且广告也很少。因此，我们建议，如果需要搜索的内容\textbf{非中文社区独有}，则可以使用国际版的Bing搜索引擎。另一个更好的选择是Google，但是可惜的是在国内一般无法访问。
+        \column{0.48\textwidth}
+            \includegraphics[width=0.9\textwidth]{4-3-BingI.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{搜索的技巧}
+    有时候我们搜索的时候无法找到我们想要的结果，这时候我们可以使用一些搜索技巧来提高搜索的效率。
+
+    \begin{itemize}
+        \item <2->使用关键词搜索；
+        \item <3->使用英语；
+        \item <4->使用高级搜索选项；
+        \begin{itemize}
+            \item <5->引号、减号、星号；
+            \item <6->site:、filetype:
+        \end{itemize} 
+    \end{itemize}
+\end{frame}
+
+\subsection{信息平台的选取}
+
+\begin{frame}{官方文档、Wiki、论坛}
+    如果我们希望获取某个软件的信息，最好的地方往往是它的官方文档。官方文档通常是最权威、最准确的信息来源，包含了软件的安装、使用和配置等信息。
+    
+    对于Arch Linux这类完全由社区维护的项目，其Wiki和论坛也是获取信息的最佳选择之一。虽然上述文档等可能存在晦涩难懂的地方，但是它们通常是最准确的信息来源。
+    \begin{block}{小提示}<2->
+        如果你在提问时遇到了诸如RTFM（Read The F***ing Manual）等回复，说明答主认为你应认真阅读官方文档。当然，这种情况下\textbf{他大概率是对的，你应该去读一读。}而通过自行查找而不是直接告诉你答案，你也能学到更多东西。
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}{堆栈溢出}
+    \begin{columns}[T]
+    \column{0.48\textwidth}
+        堆栈溢出（Stack Overflow）是一个程序员问答网站，用户可以在上面提问和回答问题。它的内容主要是关于编程、计算机科学和软件开发等方面的问题。
+
+        从我个人的使用体验而言，这东西有点像百度贴吧和知乎的结合体。
+
+    \column{0.48\textwidth}
+        \includegraphics[width=0.9\textwidth]{4-4-StackOverflow.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{GitHub}
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+            GitHub是一个代码托管平台，用户可以在上面存储和管理自己的代码。它的内容主要是关于开源项目、代码托管和版本控制等方面的信息。我们可以在这个平台上找到很多开源项目的代码和文档，并且可以参与到这些项目中去。
+        \column{0.48\textwidth}
+            \includegraphics[width=0.9\textwidth]{4-5-GitHub.png}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Wikipedia}
+    维基百科是一个自由的百科全书，用户可以在上面查找和编辑各种信息。它的内容主要是关于历史、文化、科学等方面的信息。维基百科是一个非常好的信息来源，但是我们需要注意的是，它的内容并不是完全可靠的，有些信息可能是错误的或者不准确的。同时，国内有可能会无法访问该网站，这时我们可以使用一些镜像网站来访问。
+    \begin{block}{小提示}<2->
+        如果你在维基百科上看到了一些不准确的信息，可以通过点击页面上的“编辑”按钮来修改它。维基百科是一个开放的平台，任何人都可以参与到它的编辑中去。
+    \end{block}
+\end{frame}
+
+\begin{frame}{其他著名博客和教程}
+    除了上述网站，还有很多其他著名的博客和教程，例如：
+    \begin{itemize}
+        \item <2->W3Schools及其类似网站（菜鸟教程、W3School等）
+        \item <3->OI Wiki、CTF Wiki、HPC Wiki等
+        \item <4->CS自学指南
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{其他国内优质平台}
+    \begin{columns}[T]
+        \column{0.48\textwidth}
+            我们一般认为国内的优质平台有：
+            \begin{itemize}
+                \item 知乎
+                \item 博客园
+                \item 简书
+                \item SegmentFault
+                \item Bilibili
+            \end{itemize}
+        \column{0.48\textwidth}
+            \begin{alertblock}{特别说明}<2->
+                CSDN 上虽然也有不少信息，但是该平台质量较低，商业化程度较高。虽然在少数情况下我们最终能够找到一些有用的信息，但是\textbf{高质量的平台能节约鉴别信息的精力}。
+            \end{alertblock}
+    \end{columns}    
+\end{frame}
+
+\subsection{语言大模型}
+\begin{frame}{LLM的使用原则}
+    与搜索不同，LLM的使用应该遵循以下原则：
+    \begin{itemize}
+        \item <2->使用自然语言而关键词；
+        \item <3->使用简洁明了、没有歧义的语言；
+        \item <4->使用具体的例子规范输出；
+        \item <5->把困难的任务“分治”成简单的任务；
+        \item <6->使用更先进的Prompt来引导模型。
+    \end{itemize}
+    \begin{block}{小提示}<7->
+        “怎样更好地使用LLM”这个问题其实并不简单，以至于现在已经有了一门学科“提示词工程”专门研究这一问题。有兴趣的同学可以自行查找相关资料。
+    \end{block}
+\end{frame}
+
+\subsection{提问的艺术}
+\begin{frame}{礼貌和尊重}
+    \begin{exampleblock}{例子}
+        “我电脑蓝屏了，谁能来帮修一下。”
+    \end{exampleblock}
+
+    \uncover<2->{在寻求帮助时，\textbf{礼貌和尊重}是至关重要的。\textbf{没有人有义务解答你的问题}，解决问题也许会耗费不少的时间和精力，大多数人解答问题往往只是出于本能的善意。礼貌的表达不仅能促使他人更愿意帮助你，还能建立良好的沟通氛围。}
+\end{frame}
+
+\begin{frame}{增加有用的信息}
+    \begin{exampleblock}{例子}
+        “我的电脑不知道为什么蓝屏了，我今年刚上小学二年级，那能请你帮帮我吗？谢谢，谢谢。”
+    \end{exampleblock}
+
+    \uncover<2->{即使拥有最真诚的语气，这样的问题也往往会让别人无从下手。蓝屏的可能原因有很多，而且不同的蓝屏信息也对应着可能截然不同的解决方案。如果你能够更为\textbf{具体地描述}你遇到的问题，比如蓝屏时的错误代码、蓝屏时的操作、蓝屏时的应用程序等等，那么别人就能更好地帮助你解决问题。}
+\end{frame}
+
+\begin{frame}{减少无用信息并明确化你的描述}
+    \begin{exampleblock}{例子}
+        “我的电脑突然蓝屏了，我今年刚上小学二年级，我的蓝屏时候遇到的代码是 XXXXXXXX，正在直面天命的时候蓝屏了。那能请你帮帮我吗？拜托了，这对我来说真的很重要！谢谢，谢谢。”
+    \end{exampleblock}
+
+    \uncover<2->{部分人在提问的时候总会无意识地强调与问题无关的东西。这种
+    内容往往会显著地降低信息密度，甚至招致人的反感与厌恶。一个更常见的例子是在
+    社群中发送大段语音而不是文字。同时，我们也应该避免使用一些模糊的词语，例如“突然”、“不知道为什么”等等。}
+\end{frame}
+
+\begin{frame}{列出你失败的尝试}
+    \begin{exampleblock}{例子}
+        “我的电脑突然蓝屏了，我的蓝屏时候遇到的代码是XXXXXXXX，是在游玩《黑
+        神话·悟空》的时候突然蓝屏的。能麻烦你帮我看看吗？拜托了，非常感谢！”
+    \end{exampleblock}
+
+    \uncover<2->{虽然上述文本和诚恳、无用信息少且描述明确，但是在实际社群中依然可能会被当作“日经贴”而收到RTFM或者STFM而回答。列出你失败的尝试非但不丢人，还能表现出你为了自己解决自己遇到的问题所付出的努力，也能够显著地减少重复劳动与受到上述回复。}
+\end{frame}
+
+\begin{frame}{一个较好的提问}
+    \begin{exampleblock}{例子}
+        “我的电脑突然蓝屏了，我的蓝屏时候遇到的代码是XXXXXXXX，是在游玩《黑
+神话·悟空》的时候突然蓝屏的。我上网搜索了代码相关的错误信息，尝试了网上可能
+有用的A 方法和B 方法，但都没有奏效。能麻烦你帮我看看吗？拜托了，非常感谢！”
+    \end{exampleblock}
+
+    一个较好的提问诞生了！
+\end{frame}
+
 
 \end{document}
