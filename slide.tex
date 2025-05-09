@@ -8,11 +8,14 @@
 \usepackage{hyperref}
 \usepackage{ifthen}
 
-\usetheme{Berlin}
+\logo{\includegraphics[height=8pt]{images/lcpu-logo.png}}
+\usetheme[headheight=10pt,footheight=10pt]{boxes}
+\usecolortheme{beaver}
 \usefonttheme{serif}
+% \useinnertheme{rounded}
 \setbeamercovered{dynamic}
 
-\graphicspath{{./image/}}
+\graphicspath{{./images/}}
 
 \usepackage{etoolbox}
 \AtBeginSection{
@@ -21,10 +24,10 @@
 
       \begin{columns}[T]
         \column{0.48\textwidth}
-        \tableofcontents[sections={1-\the\numexpr\value{section}/2\relax},currentsection]
+        \tableofcontents[sections={1-2},currentsection]
         
         \column{0.48\textwidth}
-        \tableofcontents[sections={\the\numexpr\value{section}/2+1\relax-},currentsection]
+        \tableofcontents[sections={3-4},currentsection]
       \end{columns}
 
   \end{frame}
@@ -34,10 +37,10 @@
     \frame{\subsectionpage}
 }
 
-\title{LCPU 先导课：计算机基础}
-\author{臧炫懿}
-\institute{北京大学 信息科学技术学院}
-\date{\today}
+\title{计算概论先修课}
+\author{臧炫懿 \and 霍子晗}
+\institute{北京大学学生 Linux 俱乐部}
+% \date{\today}
 
 \begin{document}
 
@@ -168,6 +171,138 @@
 \section{网络及其配置}
 
 % 这一段将会由其他人讲授！
+
+\subsection{什么是计算机网络}
+
+\begin{frame}{计算机网络无处不在}
+\begin{itemize}
+    \item \textbf{支撑社会}: 支撑学习、工作、生活与前沿科技（如无人驾驶、卫星通信）。
+    \item \textbf{即时通信}: 让即时通信、视频通话、远程协作成为可能。
+    \item \textbf{基础设施}: 现代社会不可或缺的基础设施。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{什么是计算机网络}
+\begin{itemize}
+    \item \textbf{互联}: 通过通信线路和设备，将不同地理位置的计算机互联，实现资源共享和信息传递。
+    \item \textbf{协议}: 依赖统一的网络协议。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{计算机网络的分类}
+\textbf{按覆盖范围}：
+\begin{itemize}
+    \item \textbf{局域网（LAN）}: 覆盖小范围，如家庭、办公室。
+    \item \textbf{城域网（MAN）}: 覆盖城市范围。
+    \item \textbf{广域网（WAN）}: 跨越更大地理范围。
+\end{itemize}
+\textbf{按传输介质}：
+\begin{itemize}
+    \item \textbf{有线}: 以太网等。
+    \item \textbf{无线}: Wi-Fi、蜂窝网络等。
+\end{itemize}
+\textbf{按规模}：
+\begin{itemize}
+    \item \textbf{个人}: 个人局域网。
+    \item \textbf{企业}: 企业内部网络。
+    \item \textbf{互联网}: 全球互联。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{互联网与计算机网络的区别}
+\textbf{计算机网络：}
+\begin{itemize}
+    \item \textbf{广义}: 任何规模的互联。
+\end{itemize}
+\textbf{互联网（Internet）：}
+\begin{itemize}
+    \item \textbf{全球最大}: 由无数网络互联而成，采用统一协议（TCP/IP）。
+\end{itemize}
+\end{frame}
+
+\subsection{计算机网络理论知识}
+
+\begin{frame}{IP地址}
+\begin{itemize}
+    \item \textbf{IPv4}: 32位，形如8.8.8.8，约42亿个地址。
+    \item \textbf{IPv6}: 128位，形如2001:0db8:85a3::1，几乎无限。
+    \item \textbf{作用}: 每台联网设备的唯一编号，IPv6解决IPv4地址枯竭问题。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{IPv4中的内网与外网}
+\begin{itemize}
+    \item \textbf{内网IP}: 仅局域网内有效，如192.168.x.x。
+    \item \textbf{外网IP}: 全球唯一，互联网可访问。
+    \item \textbf{NAT技术}: 内网设备共享公网IP访问互联网。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{MAC地址}
+\begin{itemize}
+    \item \textbf{定义}: 网卡的唯一物理地址，形如00:1A:2B:3C:4D:5E。
+    \item \textbf{作用}: 局域网内设备识别和通信。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{域名与DNS}
+\begin{itemize}
+    \item \textbf{域名}: 易记的网址（如 pku.edu.cn）。
+    \item \textbf{DNS}: 将域名解析为IP地址，便于访问网站。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{常见网络协议}
+\begin{itemize}
+    \item \textbf{TCP/IP}: 互联网核心协议，保证可靠传输。
+    \item \textbf{UDP}: 快速但不保证可靠性，适合实时应用。
+    \item \textbf{HTTPS}: 加密网页数据，提升安全性。
+    \item \textbf{SMTP}: 发送电子邮件。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{HTTP与HTTPS的区别}
+\begin{itemize}
+    \item \textbf{HTTP}: 明文传输，安全性低。
+    \item \textbf{HTTPS}: 加密传输，保护隐私、防篡改。现代网站普遍采用HTTPS。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{HTTPS的重要性}
+\begin{itemize}
+    \item \textbf{保护隐私}: 防止密码、银行卡等敏感数据被窃取。
+    \item \textbf{防止篡改}: 避免数据在传输过程中被恶意修改。
+    \item \textbf{防钓鱼}: 有助于识别和防范钓鱼网站。
+    \item \textbf{浏览器提示}: 现代浏览器会对非加密网站进行安全警告。
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{数据包的路由过程}
+\begin{enumerate}
+    \item \textbf{生成数据包}: 发送方生成数据包，包含目标IP。
+    \item \textbf{本地转发}: 本地路由器判断去向，转发到上级路由。
+    \item \textbf{多级路由}: 多级路由，最终到达目标网络。
+    \item \textbf{响应}: 目标设备收到数据包并响应。
+\end{enumerate}
+\end{frame}
+
+\subsection{北京大学网络指南}
+
+\begin{frame}{计算机如何联网}
+\begin{itemize}
+    \item \textbf{联网方式}: 需网卡，通过有线或无线方式连接路由器/交换机。
+    \item \textbf{网络参数}: 自动或手动获取IP、网关、DNS等信息。
+    \item \textbf{通信目标}: 实现与其他设备或互联网通信。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{北京大学网络指南}
+\begin{itemize}
+    \item \textbf{有线接入}: 用网线连接，登录校园网账号。
+    \item \textbf{无线接入}: 连接“PKU Secure”，用校园网账号登录。
+    \item \textbf{校外访问}: 可通过VPN访问校园资源。
+\end{itemize}
+\end{frame}
 
 \section{计算机进阶}
 
